@@ -1,0 +1,7 @@
+     [defaults]
+     url = https://sentry.io/
+     org = next-job
+     project = subrise
+
+     [auth]
+     token = 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

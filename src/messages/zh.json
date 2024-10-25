@@ -1,0 +1,140 @@
+{
+  "Meta": {
+    "home_title": "Reddit流量掘金工具 | Subrise",
+    "home_description": "Subrise精心为出海创业者打造Reddit运营工具，挑选并分类优质的Reddit 资讯，运营干货。我们帮助你发现高质、与业务匹配的Reddit 流量社区，分享一线实操运营干货，帮助您实现 Reddit 流量掘金。",
+    "concepts_title": "Reddit 基础概念和玩法介绍｜Subrise",
+    "concepts_description": "详细介绍 Reddit 的基础概念， Post，Comment，Karma 机制，Reddit Premium、Reddit Coins等",
+    "subreddits_title": "帮助你发现最佳匹配的Reddit社区 | Subrise",
+    "subreddits_description": "在 Subrise  上探索 Reddit 社区清单，帮助您快速筛选、搜索、查找符合你需求的 Subreddit",
+    "subreddits_detail_title": "Subreddit Detail",
+    "subreddits_detail_description": "Learn about the details of a specific Subreddit",
+    "tips_title": "Reddit搞流量经验干货 ｜ Reddit赚 Karma ｜ Subrise ",
+    "tips_description": "分享在 Reddit 搞流量、赚 Karma的干货经验，帮助你找到合适的 Subreddit，分享在 Reddit中进行需求挖掘，产品推广的一线实操经验。",
+    "tips_detail_title": "Tip Detail",
+    "tips_detail_description": "Learn about the details of a specific Tip"
+  },
+  "Routes": {
+    "home": "首页",
+    "concepts": "概念科普",
+    "subreddits": "探索Reddit",
+    "tips": "干货总结",
+    "featured": "Subrise精选"
+  },
+  "Pages": {
+    "home": {
+      "title": "Subrise：您的Reddit流量掘金工具",
+      "subTitle": "新手养号、流量社区筛选、运营干货一网打尽",
+      "concepts_title": "概念科普",
+      "concepts_description": "了解Reddit的基本概念和曝光机制",
+      "subreddits_title": "探索Reddit",
+      "subreddits_description": "发现适合您目标的Reddit",
+      "tips_title": "干货总结",
+      "tips_description": "探索常见的流量获取策略和经验"
+    },
+    "concepts": {
+      "title": "概念科普",
+      "search": "搜索"
+    },
+    "subreddits": {
+      "search": "搜索",
+      "title": "探索Reddit",
+      "placeholder": "请输入",
+      "no_result": "没有找到相关结果",
+      "category": "类别",
+      "more": "更多",
+      "collapse": "收起",
+      "rank": "排名范围",
+      "rank_1": "Top 10",
+      "rank_2": "Top 50",
+      "rank_3": "Top 100",
+      "rank_4": "Top 500",
+      "all": "全部",
+      "subscrib": "订阅数范围",
+      "subscrib_1": "10万以下",
+      "subscrib_2": "10-100万",
+      "subscrib_3": "100-500万",
+      "subscrib_4": "500万以上"
+    },
+    "subredditsDetail": {
+      "promotion": "适合推广的内容",
+      "notice": "注意事项",
+      "rank": "排名",
+      "rank_description": "Reddit 上该子版块的排名",
+      "subscribersCount": "订阅者",
+      "subscribersCount_description": "Reddit 上订阅该子版块的人数",
+      "tagName": "标签",
+      "tagName_description": "该子版块的标签",
+      "tips": "注意：部分文案由AI生成，请注意根据实际情况使用",
+      "visit": "前往访问"
+    },
+    "blogs": {
+      "publish_date": "发布日期"
+    },
+    "privacy_policy": {
+      "title": "Subrise 的隐私政策",
+      "effective_date": "生效日期：2024年10月16日",
+      "overview": "概览",
+      "overview_description": "Subrise 运营网站 https://subrise.co/ 并致力于保护您的隐私。本隐私政策概述了我们收集的信息类型、我们如何使用这些信息，以及我们采取哪些步骤确保您的个人信息被适当处理。",
+      "information_collection": "信息收集",
+      "personal_data": "个人数据",
+      "personal_data_description": "我们收集您自愿提供给我们的个人数据，包括但不限于：",
+      "personal_data_description_1": "姓名",
+      "personal_data_description_2": "电子邮件地址",
+      "personal_data_description_3": "支付信息",
+      "personal_data_description_4": "这些信息是为了在我们的 Subrise 导航站上处理订单而收集的。",
+      "non_personal_data": "非个人数据",
+      "non_personal_data_description": "我们还通过网络cookie收集非个人数据，其中包括您的IP地址、浏览器类型以及您在我们网站上访问的页面等使用详情。这些数据用于增强您在我们网站上的体验。",
+      "data_collection_purpose": "数据收集目的",
+      "data_collection_purpose_description": "收集您的数据的主要目的是处理您的订单并改善我们网站的功能和服务。",
+      "data_sharing": "数据共享",
+      "data_sharing_description": "Subrise 尊重您的隐私。我们不会与任何第三方分享您的个人数据，除非为了处理您的订单或遵守法律要求。",
+      "children_privacy": "儿童隐私",
+      "children_privacy_description": "我们的服务不适用于18岁以下的儿童。我们不会有意收集儿童的个人信息。",
+      "privacy_policy_update": "本隐私政策的更新",
+      "privacy_policy_update_description": "我们可能会不时更新我们的隐私政策。我们将通过在本页面上发布新的隐私政策并更新页面顶部的“生效日期”来通知您任何变更。我们还会通过电子邮件通知您重大变更。",
+      "contact_us": "联系我们",
+      "contact_us_description": "如果您对本隐私政策有任何疑问或担忧，请通过 support@subrise.co 与我们联系。"
+    },
+    "terms_of_service": {
+      "title": "Subrise 的服务条款",
+      "effective_date": "生效日期：2024年10月16日",
+      "overview": "引言",
+      "overview_description": "欢迎访问 Subrise。通过访问我们的网站 (https://subrise.co/)，您同意受这些服务条款、所有适用的法律和规定的约束，并同意您有责任遵守任何适用的当地法律。如果您不同意这些条款中的任何一条，您被禁止使用或访问本网站。",
+      "acceptance_of_terms": "使用许可",
+      "acceptance_of_terms_description": "允许暂时下载 Subrise 网站上的材料（信息或软件）一份，仅供个人、非商业的临时观看。这是授予许可，而不是转让所有权，并且在此许可下，您不得：",
+      "acceptance_of_terms_description_1": "修改或复制材料；",
+      "acceptance_of_terms_description_2": "将材料用于任何商业目的，或用于任何公共展示（商业或非商业）；",
+      "acceptance_of_terms_description_3": "尝试对 Subrise 网站上的任何软件进行反编译或逆向工程；",
+      "acceptance_of_terms_description_4": "从材料中移除任何版权或其他专有注释；或",
+      "acceptance_of_terms_description_5": "将材料转移给另一个人或在任何其他服务器上“镜像”材料。",
+      "acceptance_of_terms_description_6": "如果您违反这些限制中的任何一项，此许可将自动终止，并且 Subrise 可随时终止此许可。在终止您查看这些材料或此许可终止时，您必须销毁您是否以电子格式或印刷格式拥有的任何下载的材料。",
+      "disclaimer": "免责声明",
+      "disclaimer_description": "Subrise 网站上的材料按“原样”提供。Subrise 不作任何明示或暗示的保证，并在此放弃和否定所有其他保证，包括但不限于对适销性、特定用途的适用性或不侵犯知识产权或其他权利的暗示保证。",
+      "limitations": "限制",
+      "limitations_description": "在任何情况下，Subrise 或其供应商均不对任何损害（包括但不限于数据或利润损失或因业务中断造成的损害）承担责任，这些损害是由于使用或无法使用 Subrise 网站上的材料而引起的，即使 Subrise 或 Subrise 授权代表已被口头或书面通知可能会造成此类损害的可能性。",
+      "material_accuracy": "材料的准确性",
+      "material_accuracy_description": "在 Subrise 网站上出现的材料可能包含技术、排印或摄影错误。Subrise 不保证其网站上的任何材料准确、完整或最新。Subrise 可以随时更改其网站上包含的材料而不作通知。但是，Subrise 不承诺更新材料。",
+      "links": "链接",
+      "links_description": "Subrise 未审查与其网站链接的所有站点，并且不对任何此类链接站点的内容负责。包含任何链接并不意味着 Subrise 对该站点的认可。使用任何此类链接网站由用户自行承担风险。",
+      "modifications": "修改",
+      "modifications_description": "Subrise 可以随时修改其网站的这些服务条款而不作通知。通过使用本网站，您同意受当时这些服务条款的约束。",
+      "governing_law": "管辖法律",
+      "governing_law_description": "这些条款和条件受美国法律的管辖并根据其解释，您不可撤销地服从该州或地点法院的专属管辖权。",
+      "contact_us": "联系我们",
+      "contact_us_description": "如果您对这些条款有任何疑问，请通过 support@subrise.co 与我们联系。"
+    }
+  },
+  "Components": {
+    "pagination": {
+      "jump": "跳转至"
+    },
+    "footer": {
+      "copyright": "版权所有 © 2024 Subrise. 保留所有权利。",
+      "legal_terms": "法律条款",
+      "terms_of_service": "服务条款",
+      "privacy_policy": "隐私政策",
+      "support": "友链",
+      "nav": "导航"
+    }
+  }
+}

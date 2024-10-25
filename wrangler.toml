@@ -1,0 +1,9 @@
+# ... 其他配置 ...
+
+[[ d1_databases ]]
+binding = "DB" # 确保这个绑定名称与代码中使用的一致
+database_name = "reddit101"
+database_id = "b4a63554-afd4-4f7a-8f06-504339a3b9e9"
+
+[env.production]
+d1_databases = [{ binding = "DB", database_name = "reddit101", database_id = "YOUR_DATABASE_ID" }]

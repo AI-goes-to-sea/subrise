@@ -1,0 +1,9 @@
+{
+    "tasks": [
+      {
+        "name": "Install Dependencies",
+        "cmd": "npm install",
+        "auto": true
+      }
+    ]
+  }
