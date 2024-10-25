@@ -18,7 +18,7 @@ export default async function middleware(req: NextRequest) {
     localeDetection: false
   });
   // 处理国际化路由
-  return handleI18nRouting(req) || NextResponse.next({headers});
+  return handleI18nRouting(req);
 }
 
 export const config = {
