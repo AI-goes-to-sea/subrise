@@ -5,6 +5,8 @@ import Logo from './logo';
 import { Link, usePathname } from '@/i18n/routing';
 import { NavItems } from '@/constants';
 import { cn } from '@/lib/utils';
+import LinksComp from './links-comp';
+// import { GitHubIcon } from 'lucide-react';
 // import { usePathname } from 'next/navigation'
 
 export default function Footer() {
@@ -41,7 +43,6 @@ export default function Footer() {
   //   { label: 'Privacy Policy', href: '/privacy-policy', title: 'Privacy Policy' },
   //   { label: 'Terms of Service', href: '/terms-of-service', title: 'Terms of Service' },
   // ];
-
   const commonClasses = 'border-b border-zinc-100 dark:border-zinc-800 pb-3 lg:pb-0 lg:border-none';
 
   return (
@@ -50,6 +51,8 @@ export default function Footer() {
         <div className={cn("flex flex-col space-y-3 ", commonClasses)}>
           <div className="flex"><Logo /> </div>
           <span className="hidden text-sm lg:block lg:text-md mt-0 md:mt-1 dark:text-white">{t('copyright')}</span>
+          {/* <p><GitHubIcon /></p> */}
+          <LinksComp />
         </div>
         <div className="flex flex-col space-x-0 lg:flex-row lg:space-x-20 mt-5 lg:mt-0">
 
