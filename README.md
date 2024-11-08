@@ -48,5 +48,12 @@ bun dev
 - [Wrangler D1](https://developers.cloudflare.com/d1/wrangler-d1/)
 - [next-intl](https://next-intl-docs.vercel.app/docs/introduction)
 
+## 相关链接
+- https://sites.google.com/view/subrise/home
+- https://linktr.ee/MineZheng
+- https://winwiz.gitbook.io/winwiz/
+- https://blossom-caboc-dab.notion.site/Subrise-Your-Reddit-traffic-nugget-tool-12e6d43113f780ce8c0ecaf067d555d7
+- https://rebrand.ly/subrise
+
 ## 版权声明
 - 项目代码开源，遵循 MIT 协议， 请遵守协议内容
