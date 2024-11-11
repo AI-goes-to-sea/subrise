@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Check, CircleAlert } from "lucide-react";
+import { Check, CircleAlert, Flame } from "lucide-react";
 import { formatNumber } from "@/lib/utils";
 import Image from "next/image";
 import {Link} from "@/i18n/routing";
@@ -77,6 +77,19 @@ export default function SubredditDetail({item}: SubredditDetailProps) {
           {item.notice?.replace(/\\n/g, '\n')}
         </pre> 
       </div>
+
+      {
+        item.featuredReason && (
+          <div className="mb-6 rounded-lg bg-zinc-100 dark:bg-zinc-800 p-6"> 
+            <h2 className="mb-4 flex items-center text-2xl font-semibold text-orange-500">
+              <Flame className="mr-2 w-7 h-7" /> {t('featuredReason')}
+            </h2> 
+            <pre className="whitespace-pre-wrap text-base text-zinc-500 dark:text-white">
+              {item.featuredReason?.replace(/\\n/g, '\n')}
+            </pre> 
+          </div>
+        )
+      }
     </>
   )
 }

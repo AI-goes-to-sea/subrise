@@ -172,6 +172,7 @@ export async function getSubredditByName (name: string, language: string) {
       tagName: subredditLang.tagName,
       notice: subredditLang.notice,
       promotion: subredditLang.promotion,
+      featuredReason: subredditLang.featuredReason,
     })
     .from(subreddit)
     .innerJoin(subredditLang, eq(subreddit.id, subredditLang.subredditId))  

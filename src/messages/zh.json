@@ -65,7 +65,8 @@
       "tagName": "标签",
       "tagName_description": "该子版块的标签",
       "tips": "注意：部分文案由AI生成，请注意根据实际情况使用",
-      "visit": "前往访问"
+      "visit": "前往访问",
+      "featuredReason": "推荐理由"
     },
     "blogs": {
       "publish_date": "发布日期"

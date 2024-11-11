@@ -150,7 +150,7 @@ export default function  SubredditComp ({subridditData, tagsData, locale}: Subre
         {
           subredditArrs.length > 0 ? subredditArrs.map((sub) => (
             <div key={sub.id} 
-              className="relative cursor-pointer ml-4 md:ml-0 border rounded-lg shadow-md hover:shadow-lg p-5 bg-white transition-all duration-300"
+              className="relative cursor-pointer ml-4 md:ml-0 order-1 border-l-4 border-orange-500  rounded-lg shadow-md hover:shadow-lg p-5 bg-white transition-all duration-300"
               onClick={() => handleSubredditClick(sub)}
             >
               <div className="absolute -top-[10px] -left-[18px] border p-2 rounded-[999px] px-2 py-1 bg-white text-xs text-zinc-500"># {sub.rank}</div>

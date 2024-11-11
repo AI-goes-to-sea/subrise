@@ -18,7 +18,7 @@ export default function TipsPageComp ({
         {
           initData?.map((article: ArticleItems, index: number) => (
             <Link href={`/blog/${article.articleUrl}`} className="block" key={article.id}>
-              <div className="flex justify-between items-center p-6 bg-white border rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 relative">
+              <div className="flex justify-between items-center p-6 bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 relative order-1 border-l-4 border-orange-500 ">
                 <div className="flex flex-1">
                   <div className="flex-1">
                     <h2 className="text-xl text-black leading-8 font-bold relative line-clamp-1">{index + 1}. {article.title}</h2>

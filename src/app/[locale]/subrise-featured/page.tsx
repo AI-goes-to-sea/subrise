@@ -1,42 +1,29 @@
-'use client'
+import { Link } from "@/i18n/routing";
+import { getSubredditFeaturedList } from "@/server/featured";
 
-import { useState } from "react"
+export default async function SubriseFeatured({ params }: { params: { locale: string } }) {
 
-export default function SubriseFeatured() {
-
-  const items = [
-    'Domes', 'Castles', 'Barns', 'Houseboats', 'Mansions',
-    'Windmills', 'Campers', 'Towers', 'Earth homes', 'Caves',
-    'Containers', 'Cycladic homes', 'Ryokans', 'Trulli'
-  ]
-  const [scrollAmount, setScrollAmount] = useState(0)
-  const scrollStep = 100 // 每次滚动的像素数
-
-  const handleNext = () => {
-    setScrollAmount(prev => prev + scrollStep)
-  }
-
-  const handlePrev = () => {
-    setScrollAmount(prev => (prev - scrollStep < 0 ? 0 : prev - scrollStep))
-  }
+  const featuredList = await getSubredditFeaturedList(params.locale);
 
   return (
-    <div className="relative flex items-center">
-      <button onClick={handlePrev} className="absolute left-0 z-10 p-2 bg-gray-200 rounded-full hover:bg-gray-300">
-        &lt;
-      </button>
-      <div className="overflow-hidden relative">
-        <div className="absolute left-0 top-0 bottom-0 w-[200px] bg-gradient-to-r z-10 from-white to-transparent pointer-events-none" />
-        <ul className="flex space-x-4 transition-transform duration-300" style={{ transform: `translateX(-${scrollAmount}px)` }}>
-          {items.map(item => (
-            <li key={item} className="flex items-center">{item}</li>
-          ))}
-        </ul>
-        <div className="absolute right-0 top-0 bottom-0 w-[200px] bg-gradient-to-l from-white to-transparent pointer-events-none" />
-      </div>
-      <button onClick={handleNext} className="absolute right-0 z-10 p-2 bg-gray-200 rounded-full hover:bg-gray-300">
-        &gt;
-      </button>
+    <div className="flex flex-1 flex-col space-y-8">
+      {featuredList.map((item, index) => {
+        return (
+          <Link key={index} href={`/subrise-featured/${item.id}`}>
+            <div className="flex flex-col md:flex-row justify-between p-6 bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 relative order-1 border-l-4 border-orange-500 ">
+              <div className="hidden flex-shrink-0 md:flex justify-center w-24 h-24 rounded-lg">
+                <span className="text-6xl font-semibold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">
+                  {index + 1}
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col justify-between ml-4">
+                <h2 className="text-2xl font-semibold text-black">{item.name}</h2>
+                <p className="text-zinc-500 mt-4 line-clamp-3">{item.description}</p>
+              </div>
+            </div>
+          </Link>
+        )
+      })}
     </div>
   )
 }

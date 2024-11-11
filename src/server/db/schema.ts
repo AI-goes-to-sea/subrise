@@ -22,10 +22,13 @@ export const subreddit = sqliteTable(
     createdAt: numeric("createdAt")
       .default(sql`(CURRENT_TIMESTAMP)`)
       .notNull(),
+    updatedAt: numeric("updatedAt")
+      .default(sql`(CURRENT_TIMESTAMP)`)
+      .notNull(),
   },
   (subreddit) => ({
     nameIndex: uniqueIndex("subreddit_name_idx").on(subreddit.name),
-    tagIdIndex: uniqueIndex("subreddit_tagId_idx").on(subreddit.tagId),
+    // tagIdIndex: uniqueIndex("subreddit_tagId_idx").on(subreddit.tagId),
   })
 );
 
@@ -42,6 +45,7 @@ export const subredditLang = sqliteTable("subredditLang", {
 	topic: text("topic"),
 	notice: text("notice"),
 	createdAt: numeric("createdAt").default(sql`(CURRENT_TIMESTAMP)`).notNull(),
+  featuredReason: text("featuredReason"),
 },
 (subredditLang) => ({
   subredditIdLangIdx: uniqueIndex("subredditLang_subredditId_idx").on(subredditLang.subredditId, subredditLang.language),
@@ -62,26 +66,27 @@ export const article = sqliteTable("article", {
   title: text("title").notNull().unique(),
   content: text("content").notNull(),
   description: text("description"),
-  articleUrl: text("articleUrl").notNull().unique(),
+  articleUrl: text("articleUrl").notNull(),
   tags: text("tags"),
   language: text("language"),
   imageUrl: text("imageUrl"),
+  author: text("author"),
   createdAt: numeric("createdAt")
     .default(sql`(CURRENT_TIMESTAMP)`)
     .notNull(),
 });
 
-export const resource = sqliteTable("resource", {
-  id: integer("id").primaryKey({ autoIncrement: true }),
-  name: text("name").notNull().unique(),
-  url: text("url"),
-  tags: text("tags"),
-  iconUrl: text("iconUrl"),
-  description: text("description"),
-  createdAt: numeric("createdAt")
-    .default(sql`(CURRENT_TIMESTAMP)`)
-    .notNull(),
-});
+// export const resource = sqliteTable("resource", {
+//   id: integer("id").primaryKey({ autoIncrement: true }),
+//   name: text("name").notNull().unique(),
+//   url: text("url"),
+//   tags: text("tags"),
+//   iconUrl: text("iconUrl"),
+//   description: text("description"),
+//   createdAt: numeric("createdAt")
+//     .default(sql`(CURRENT_TIMESTAMP)`)
+//     .notNull(),
+// });
 
 export const subredditTagLang = sqliteTable("subredditTagLang", {
 	id: integer("id").primaryKey().notNull(),
@@ -99,3 +104,13 @@ export const concept = sqliteTable("concept", {
 	content: text("content").notNull(),
 	createdAt: numeric("createdAt").default(sql`(CURRENT_TIMESTAMP)`).notNull(),
 });
+
+export const subriseFeatured = sqliteTable("subriseFeatured", {
+	id: integer("id").primaryKey().notNull(),
+  name: text("name").notNull(),
+  language: text("language").notNull(),
+	description: text("description"),
+	subredditId: text("subredditId").notNull(),
+	promotion: text("promotion"),
+	createdAt: numeric("createdAt").default(sql`(CURRENT_TIMESTAMP)`).notNull(),
+})
