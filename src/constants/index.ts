@@ -68,11 +68,11 @@ export const NavItems = [
     link: '/blog',
     icon: List
   },
-  {
-    title: 'featured',
-    link: '/subrise-featured',
-    icon: List
-  }
+  // {
+  //   title: 'featured',
+  //   link: '/subrise-featured',
+  //   icon: List
+  // }
 ]
 
 export const SITEMAP_INDEX_PAGE_SIZE = 2000;
