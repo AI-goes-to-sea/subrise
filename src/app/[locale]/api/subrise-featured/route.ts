@@ -1,4 +1,4 @@
-import { generateSitemapXml } from "@/lib/utils";
+import { generateSitemapXml, SitemapUrl } from "@/lib/utils";
 import { getAllSubredditFeatured } from "@/server/featured";
 import { NextResponse } from "next/server";
 
