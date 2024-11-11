@@ -71,6 +71,11 @@
     "blogs": {
       "publish_date": "发布日期"
     },
+    "featured": {
+      "description": "描述",
+      "promotion": "推广",
+      "featuredReason": "精选理由"
+    },
     "privacy_policy": {
       "title": "Subrise 的隐私政策",
       "effective_date": "生效日期：2024年10月16日",

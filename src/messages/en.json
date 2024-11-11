@@ -70,6 +70,11 @@
     "blogs": {
       "publish_date": "Publish Date"
     },
+    "featured": {
+      "description": "Description",
+      "promotion": "Promotion",
+      "featuredReason": "Featured Reason"
+    },
     "privacy_policy": {
       "title": "Subrise Privacy Policy",
       "effective_date": "Effective Date: 2024-10-16",

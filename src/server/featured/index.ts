@@ -10,7 +10,7 @@ export async function getSubredditFeaturedList (language: string) {
     .execute();
 } 
 
-export async function getSubredditFeaturedDetail({language, id}: {language: string, id: number}) {
+export async function getSubredditFeaturedDetail({language, featuredUrl}: {language: string, featuredUrl: string}) {
   const featuredDetail = await db
     .select({
       name: subriseFeatured.name,
@@ -20,7 +20,7 @@ export async function getSubredditFeaturedDetail({language, id}: {language: stri
       // notice: subriseFeatured.notice,
     })
     .from(subriseFeatured)
-    .where(and(eq(subriseFeatured.language, language), eq(subriseFeatured.id, id)))
+    .where(and(eq(subriseFeatured.language, language), eq(subriseFeatured.featuredUrl, featuredUrl)))
     .execute();
 
   const {subredditId} = featuredDetail[0]
@@ -38,7 +38,7 @@ export async function getSubredditFeaturedDetail({language, id}: {language: stri
     .where(and(eq(subredditLang.language, language), inArray(subredditLang.subredditId, redditIds.map(Number))))
     .execute();
 
-  console.log(reasons);
+  // console.log(reasons);
   return {
     info: featuredDetail[0],
     reasons: reasons

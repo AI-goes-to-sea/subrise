@@ -108,6 +108,7 @@ export const concept = sqliteTable("concept", {
 export const subriseFeatured = sqliteTable("subriseFeatured", {
 	id: integer("id").primaryKey().notNull(),
   name: text("name").notNull(),
+  featuredUrl: text("featuredUrl"),
   language: text("language").notNull(),
 	description: text("description"),
 	subredditId: text("subredditId").notNull(),

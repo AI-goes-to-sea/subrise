@@ -60,27 +60,27 @@ export default function SubredditDetail({item}: SubredditDetailProps) {
         <RenderItem title={t('tagName')} value={`${item.tagName || ''}`} description={t('tagName_description')} />
       </div>
 
-      <div className="mb-6 rounded-lg bg-zinc-100 dark:bg-zinc-800 p-6 text-white"> 
+      <div className="mb-6 p-8 rounded-lg shadow-md border dark:border-zinc-500 dark:text-white dark:bg-zinc-700"> 
         <h2 className="mb-4 flex items-center text-2xl font-semibold text-orange-500"> 
           <Check className="mr-2 w-6 h-6" /> {t('promotion')}
         </h2>
         <pre className="text-base text-zinc-500 whitespace-pre-wrap dark:text-white">
-          {item.promotion?.replace(/\\n/g, '\n')}
+          {item.promotion?.replace(/\\n/g, '\n\n')}
         </pre> 
       </div>
 
-      <div className="mb-6 rounded-lg bg-zinc-100 dark:bg-zinc-800 p-6"> 
+      <div className="mb-6 p-8 rounded-lg shadow-md border dark:border-zinc-500 dark:text-white dark:bg-zinc-700"> 
         <h2 className="mb-4 flex items-center text-2xl font-semibold text-orange-500">
           <CircleAlert className="mr-2 w-6 h-6" /> {t('notice')}
         </h2> 
         <pre className="whitespace-pre-wrap text-base text-zinc-500 dark:text-white">
-          {item.notice?.replace(/\\n/g, '\n')}
+          {item.notice?.replace(/\\n/g, '\n\n')}
         </pre> 
       </div>
 
       {
         item.featuredReason && (
-          <div className="mb-6 rounded-lg bg-zinc-100 dark:bg-zinc-800 p-6"> 
+          <div className="p-8 leading-8 rounded-lg shadow-md border dark:border-zinc-500 dark:text-white dark:bg-zinc-700"> 
             <h2 className="mb-4 flex items-center text-2xl font-semibold text-orange-500">
               <Flame className="mr-2 w-7 h-7" /> {t('featuredReason')}
             </h2> 
