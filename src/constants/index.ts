@@ -68,6 +68,7 @@ export const NavItems = [
     link: '/blog',
     icon: List
   },
+  
   {
     title: 'featured',
     link: '/subrise-featured',
