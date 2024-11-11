@@ -4,3 +4,4 @@ Allow: *
 Sitemap: https://subrise.co/sitemap.xml
 Sitemap: https://subrise.co/en/api/sitemap
 Sitemap: https://subrise.co/en/api/sitemap-index
+Sitemap: https://subrise.co/en/api/subrise-featured

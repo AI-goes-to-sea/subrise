@@ -16,8 +16,8 @@ export async function getSubredditFeaturedDetail({language, featuredUrl}: {langu
       name: subriseFeatured.name,
       description: subriseFeatured.description,
       promotion: subriseFeatured.promotion,
+      featuredUrl: subriseFeatured.featuredUrl,
       subredditId: subriseFeatured.subredditId,
-      // notice: subriseFeatured.notice,
     })
     .from(subriseFeatured)
     .where(and(eq(subriseFeatured.language, language), eq(subriseFeatured.featuredUrl, featuredUrl)))
@@ -43,4 +43,11 @@ export async function getSubredditFeaturedDetail({language, featuredUrl}: {langu
     info: featuredDetail[0],
     reasons: reasons
   };
+}
+
+export async function getAllSubredditFeatured() {
+  return await db
+    .select()
+    .from(subriseFeatured)
+    .execute();
 }

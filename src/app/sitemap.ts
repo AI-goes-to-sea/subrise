@@ -13,6 +13,18 @@ export default function sitemap() {
             priority: 1,
         },
         {
+            url: 'https://subrise.co/zh/subrise-featured',
+            lastModified: new Date().toISOString(),
+            changeFrequency: 'daily',
+            priority: 0.8,
+        },
+        {
+            url: 'https://subrise.co/en/subrise-featured',
+            lastModified: new Date().toISOString(),
+            changeFrequency: 'daily',
+            priority: 0.8,
+        },
+        {
             url: 'https://subrise.co/en/concept',
             lastModified: new Date().toISOString(),
             changeFrequency: 'monthly',
@@ -72,5 +84,6 @@ export default function sitemap() {
             changeFrequency: 'weekly',
             priority: 0.3,
         },
+        
     ];
 } 

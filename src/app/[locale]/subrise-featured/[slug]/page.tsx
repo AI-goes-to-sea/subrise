@@ -1,7 +1,37 @@
 import SubriseFeaturedInfo from "@/components/subrise-featured-info";
 import TagComp from "@/components/TagComp";
+import { MetadataMap } from "@/lib/utils";
 import { getSubredditFeaturedDetail } from "@/server/featured";
+import { Metadata } from "next";
 
+export const runtime = 'edge';
+
+const metadataMap: MetadataMap = {
+  'en': (name: string) => {
+    return {
+      title: `${name} | Helps you discover the best-matched Reddit communities | Subrise`,
+      description: `${name} | Explore the list of Reddit communities on Subrise, helping you quickly filter, search, and find Subreddits that meet your needs | Subreddit`,
+    }
+  },
+  'zh': (name: string) => {
+    return {
+      title: `${name} | 帮助你发现最佳匹配的 Reddit 社区 | Subrise`,
+      description: `${name} | 在Subrise上探索 Reddit 社区清单，帮助您快速筛选、搜索、查找符合你需求的 | Subreddit`,
+    }
+  }
+}
+
+export async function generateMetadata ({
+  params, 
+  searchParams 
+}: { 
+  params: { locale: string }, 
+  searchParams: { [key: string]: string } 
+}): Promise<Metadata> {
+  const name = searchParams.slug
+  const metadataFunction = metadataMap[params.locale] || metadataMap['en'];
+  return metadataFunction(name??'') // 默认返回英文 metadata
+}
 
 export default async function SubriseFeaturedSlug({
   params,
