@@ -72,8 +72,9 @@
     },
     "featured": {
       "description": "Description",
-      "promotion": "Promotion",
-      "featuredReason": "Featured Reason"
+      "promotion": "Product Suitable for Promotion",
+      "featuredReason": "Featured Reason",
+      "subMenu": "Subreddit List"
     },
     "privacy_policy": {
       "title": "Subrise Privacy Policy",

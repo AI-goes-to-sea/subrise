@@ -73,8 +73,9 @@
     },
     "featured": {
       "description": "描述",
-      "promotion": "推广",
-      "featuredReason": "精选理由"
+      "promotion": "适合推广的产品",
+      "featuredReason": "精选理由",
+      "subMenu": "Subreddit 清单"
     },
     "privacy_policy": {
       "title": "Subrise 的隐私政策",

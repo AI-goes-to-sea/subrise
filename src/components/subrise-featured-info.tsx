@@ -62,7 +62,7 @@ export default function SubriseFeaturedInfo({
               <List className="relative -top-[1px] h-5 w-5 sm:h-6 sm:w-6 text-orange-500 mr-2" />
               <h2 className="text-xl sm:text-2xl font-bold text-orange-500">{t('featuredReason')}</h2>
             </div>
-            <div className="columns-1 sm:columns-2 md:columns-3 gap-4 sm:gap-6">
+            <div className="columns-1 md:columns-2 lg:columns-3 gap-4 sm:gap-6">
               {reasons.map((reason, index) => (
                 <Link key={index} href={`/reddit-list/${reason.name}`}>
                   <div className="relative break-inside-avoid border shadow-md hover:shadow-lg transition-shadow duration-300 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 sm:p-6 rounded-lg mb-4 sm:mb-6">
