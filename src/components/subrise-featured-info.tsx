@@ -56,7 +56,7 @@ export default function SubriseFeaturedInfo({
       {/* Promotion */}
       <section className="py-8">
         <div className="flex items-center mb-6">
-          <Star className="relative -top-0.5 h-8 w-8 text-orange-500 mr-2" />
+          <Star className="relative -top-[1px] h-6 w-6 text-orange-500 mr-2" />
           <h2 className="text-2xl font-bold text-orange-500">{t('promotion')}</h2>
         </div>
         <pre className="text-lg text-zinc-500 dark:text-white whitespace-pre-wrap">{info.promotion?.replace(/\\n/g, '\n\n')}</pre>
@@ -69,7 +69,7 @@ export default function SubriseFeaturedInfo({
         reasons.length > 0 && (
           <section className="py-8">
             <div className="flex items-center mb-6">
-              <List className="relative -top-0.5 h-8 w-8 text-orange-500 mr-2" />
+              <List className="relative -top-[1px] h-6 w-6 text-orange-500 mr-2" />
               <h2 className="text-2xl font-bold text-orange-500">{t('featuredReason')}</h2>
             </div>
             <div className="columns-1 sm:columns-2 md:columns-3 gap-6">
