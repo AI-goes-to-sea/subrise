@@ -31,11 +31,14 @@ export async function getSubredditFeaturedDetail({language, featuredUrl}: {langu
   const reasons = await db
     .select({
       ...getTableColumns(subreddit),
-      ...getTableColumns(subredditLang)
+      featuredReason: subredditLang.featuredReason,
+      category: subredditLang.category,
+      description: subredditLang.description,
+      tagName: subredditLang.tagName,
     })
     .from(subreddit)
-    .innerJoin(subredditLang, eq(subredditLang.subredditId, subreddit.id))
-    .where(and(eq(subredditLang.language, language), inArray(subredditLang.subredditId, redditIds.map(Number))))
+    .innerJoin(subredditLang, eq(subreddit.id, subredditLang.subredditId))
+    .where(and(eq(subredditLang.language, language), inArray(subreddit.id, redditIds.map(Number))))
     .execute();
 
   // console.log(reasons);
