@@ -75,7 +75,7 @@ export default function SubriseFeaturedInfo({
             <div className="columns-1 sm:columns-2 md:columns-3 gap-6">
               {reasons.map((reason, index) => (
                 <Link key={index} href={`/reddit-list/${reason.name}`}>
-                  <div  className="relative break-inside-avoid border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-6 rounded-lg mb-6">
+                  <div className="relative break-inside-avoid border shadow-md hover:shadow-lg transition-shadow duration-300 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-6 rounded-lg mb-6">
                     <div className="flex items-center mb-6">
                       <img src={reason.iconUrl} alt={reason.name} className="h-12 w-12 rounded-full mr-4 bg-white" />
                       <div className="flex-1">
