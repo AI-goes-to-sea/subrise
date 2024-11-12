@@ -58,7 +58,7 @@ export default async function SubriseFeaturedSlug({
         )
       }
 
-      {/* <SubriseFeaturedInfo info={info} reasons={reasons} /> */}
+      <SubriseFeaturedInfo info={info} reasons={reasons} />
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import { db } from "../db";
 import { subreddit, subredditLang, subriseFeatured } from "../db/schema";
-import { eq, and, inArray, getTableColumns } from "drizzle-orm";
+import { eq, and, inArray } from "drizzle-orm";
 export async function getSubredditFeaturedList (language: string) {
 
   return await db
@@ -30,11 +30,20 @@ export async function getSubredditFeaturedDetail({language, featuredUrl}: {langu
   // console.log(redditIds);
   const reasons = await db
     .select({
-      ...getTableColumns(subreddit),
+      // ...getTableColumns(subreddit),
+      // featuredReason: subredditLang.featuredReason,
+      // category: subredditLang.category,
+      // description: subredditLang.description,
+      // tagName: subredditLang.tagName,
+      id: subreddit.id,
+      name: subreddit.name,
+      rank: subreddit.rank,
+      iconUrl: subreddit.iconUrl,
+      subscribersCount: subreddit.subscribersCount,
+      href: subreddit.href,
       featuredReason: subredditLang.featuredReason,
       category: subredditLang.category,
       description: subredditLang.description,
-      tagName: subredditLang.tagName,
     })
     .from(subreddit)
     .innerJoin(subredditLang, eq(subreddit.id, subredditLang.subredditId))
