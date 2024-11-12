@@ -2,6 +2,8 @@ import { Info, Star, List } from 'lucide-react';
 import { useTranslations } from "next-intl";
 
 import { Metadata } from "next";
+import { Link } from '@/i18n/routing';
+import TagComp from './TagComp';
 
 const metadataMap: Record<string, Metadata> = {
   'en': {
@@ -39,47 +41,67 @@ export default function SubriseFeaturedInfo({
   const t = useTranslations('Pages.featured');
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-12 px-8">
       { /* Description */}
-      <section className="p-8 rounded-lg shadow-md border dark:border-zinc-500 dark:text-white dark:bg-zinc-700">
-        <div className="flex items-center mb-4">
-          <Info className="relative -top-0.5 h-8 w-8 text-orange-500 mr-2" />
-          <h2 className="text-3xl font-bold text-orange-500">{t('description')}</h2>
-        </div>
-        <pre className="text-lg leading-8 text-zinc-500 dark:text-white whitespace-pre-wrap">{info.description?.replace(/\\n/g, '\n')}</pre>
+      <section className="py-8">
+          {/* <div className="flex items-center mb-6">
+            <Info className="relative -top-0.5 h-8 w-8 text-orange-500 mr-2" />
+            <h2 className="text-2xl font-bold text-orange-500">{t('description')}</h2>
+          </div> */}
+          <pre className="text-lg leading-8 text-zinc-500 dark:text-white whitespace-pre-wrap">{info.description?.replace(/\\n/g, '\n')}</pre>
       </section>
 
+      <hr className="my-8 border-zinc-300 dark:border-zinc-600" />
+
       {/* Promotion */}
-      <section className="p-8 rounded-lg shadow-md border dark:border-zinc-500 dark:text-white dark:bg-zinc-700">
-        <div className="flex items-center mb-4">
+      <section className="py-8">
+        <div className="flex items-center mb-6">
           <Star className="relative -top-0.5 h-8 w-8 text-orange-500 mr-2" />
-          <h2 className="text-3xl font-bold text-orange-500">{t('promotion')}</h2>
+          <h2 className="text-2xl font-bold text-orange-500">{t('promotion')}</h2>
         </div>
         <pre className="text-lg text-zinc-500 dark:text-white whitespace-pre-wrap">{info.promotion?.replace(/\\n/g, '\n\n')}</pre>
       </section>
 
-      {/* Featured Reasons - 时间轴布局 */}
+      <hr className="my-8 border-zinc-300 dark:border-zinc-600" />
+
+      {/* Featured Reasons - 瀑布流布局 */}
       {
         reasons.length > 0 && (
-          <section className="p-8 rounded-lg shadow-md border dark:border-zinc-500 dark:text-white dark:bg-zinc-700">
-            <div className="flex items-center mb-4">
+          <section className="py-8">
+            <div className="flex items-center mb-6">
               <List className="relative -top-0.5 h-8 w-8 text-orange-500 mr-2" />
-              <h2 className="text-3xl font-bold text-orange-500">{t('featuredReason')}</h2>
+              <h2 className="text-2xl font-bold text-orange-500">{t('featuredReason')}</h2>
             </div>
-            <div className="relative mt-10">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full border-l-2 border-orange-300 dark:border-orange-600"></div>
+            <div className="columns-1 sm:columns-2 md:columns-3 gap-6">
               {reasons.map((reason, index) => (
-                <div key={index} className={`mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}>
-                  <div className="order-1 w-5/12"></div>
-                  <div className="z-20 flex items-center order-1 bg-orange-500 dark:bg-orange-600 shadow-xl w-8 h-8 rounded-full">
-                    <h1 className="mx-auto font-semibold text-lg text-white">{index + 1}</h1>
+                <Link key={index} href={`/reddit-list/${reason.name}`}>
+                  <div  className="relative break-inside-avoid border border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-6 rounded-lg mb-6">
+                    <div className="flex items-center mb-6">
+                      <img src={reason.iconUrl} alt={reason.name} className="h-12 w-12 rounded-full mr-4 bg-white" />
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-1">
+                          <h3 className="text-xl font-bold  dark:text-white"> {reason.name} </h3>
+                          <span className="text-zinc-500 dark:text-white">#{reason.rank}</span>
+                        </div>
+                        
+                        {/* <p className="text-sm text-zinc-500 dark:text-white">{reason.category}</p> */}
+                        <TagComp tags={reason.category.split(',')} />
+                      </div>
+                    </div>
+                    <div className="mb-2">
+                      <h4 className="text-lg font-semibold text-zinc-800 dark:text-white">Description</h4>
+                      <p className="text-zinc-500 dark:text-white mt-2">{reason.description}</p>
+                    </div>
+                    <hr className="my-4 border-zinc-300 dark:border-zinc-600" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-zinc-800 dark:text-white">Featured Reason</h4>
+                      <p className="text-sm text-zinc-500 dark:text-white mt-2">{reason.featuredReason}</p>
+                    </div>
                   </div>
-                  <div className="order-1 border-l-4 border-orange-500 rounded-lg shadow-md w-5/12 px-6 py-4">
-                    <p className="text-lg text-zinc-500 dark:text-white">{reason.featuredReason}</p>
-                  </div>
-                </div>
+                </Link>
               ))}
             </div>
+            
           </section>
         )
       }

@@ -1,6 +1,6 @@
 import { db } from "../db";
-import { subredditLang, subriseFeatured } from "../db/schema";
-import { eq, and, inArray } from "drizzle-orm";
+import { subreddit, subredditLang, subriseFeatured } from "../db/schema";
+import { eq, and, inArray, getTableColumns } from "drizzle-orm";
 export async function getSubredditFeaturedList (language: string) {
 
   return await db
@@ -28,13 +28,15 @@ export async function getSubredditFeaturedDetail({language, featuredUrl}: {langu
   // console.log(subredditId);
   let redditIds = subredditId.split(',');
   // console.log(redditIds);
-
   const reasons = await db
     .select({
-      featuredReason: subredditLang.featuredReason,
-      category: subredditLang.category
+      // featuredReason: subredditLang.featuredReason,
+      // category: subredditLang.category,
+      ...getTableColumns(subreddit),
+      ...getTableColumns(subredditLang)
     })
-    .from(subredditLang)
+    .from(subreddit)
+    .leftJoin(subredditLang, eq(subreddit.id, subredditLang.subredditId))
     .where(and(eq(subredditLang.language, language), inArray(subredditLang.subredditId, redditIds.map(Number))))
     .execute();
 
