@@ -60,7 +60,7 @@ export default function SubriseFeaturedInfo({
           <section className="py-6">
             <div className="flex items-center mb-4">
               <List className="relative -top-[1px] h-5 w-5 sm:h-6 sm:w-6 text-orange-500 mr-2" />
-              <h2 className="text-xl sm:text-2xl font-bold text-orange-500">{t('featuredReason')}</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-orange-500">{t('subMenu')}</h2>
             </div>
             <div className="columns-1 md:columns-2 lg:columns-3 gap-4 sm:gap-6">
               {reasons.map((reason, index) => (
