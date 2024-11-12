@@ -35,7 +35,7 @@ export async function getSubredditFeaturedDetail({language, featuredUrl}: {langu
       // ...getTableColumns(subreddit),
       ...getTableColumns(subredditLang)
     })
-    .from(subreddit)
+    .from(subredditLang)
     // .leftJoin(subredditLang, eq(subreddit.id, subredditLang.subredditId))
     .where(and(eq(subredditLang.language, language), inArray(subredditLang.subredditId, redditIds.map(Number))))
     .execute();
