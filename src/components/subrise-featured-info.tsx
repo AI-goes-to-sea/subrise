@@ -83,8 +83,6 @@ export default function SubriseFeaturedInfo({
                           <h3 className="text-xl font-bold  dark:text-white"> {reason.name} </h3>
                           <span className="text-zinc-500 dark:text-white">#{reason.rank}</span>
                         </div>
-                        
-                        {/* <p className="text-sm text-zinc-500 dark:text-white">{reason.category}</p> */}
                         <TagComp tags={reason.category.split(',')} />
                       </div>
                     </div>
