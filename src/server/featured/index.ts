@@ -30,11 +30,6 @@ export async function getSubredditFeaturedDetail({language, featuredUrl}: {langu
   // console.log(redditIds);
   const reasons = await db
     .select({
-      // ...getTableColumns(subreddit),
-      // featuredReason: subredditLang.featuredReason,
-      // category: subredditLang.category,
-      // description: subredditLang.description,
-      // tagName: subredditLang.tagName,
       id: subreddit.id,
       name: subreddit.name,
       rank: subreddit.rank,
