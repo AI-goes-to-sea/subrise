@@ -32,11 +32,11 @@ export async function getSubredditFeaturedDetail({language, featuredUrl}: {langu
     .select({
       // featuredReason: subredditLang.featuredReason,
       // category: subredditLang.category,
-      ...getTableColumns(subreddit),
+      // ...getTableColumns(subreddit),
       ...getTableColumns(subredditLang)
     })
     .from(subreddit)
-    .leftJoin(subredditLang, eq(subreddit.id, subredditLang.subredditId))
+    // .leftJoin(subredditLang, eq(subreddit.id, subredditLang.subredditId))
     .where(and(eq(subredditLang.language, language), inArray(subredditLang.subredditId, redditIds.map(Number))))
     .execute();
 
