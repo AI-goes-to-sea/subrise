@@ -87,7 +87,7 @@ export default function SubriseFeaturedInfo({
                       </div>
                     </div>
                     <div className="mb-2">
-                      <h4 className="text-lg font-semibold text-zinc-800 dark:text-white">{t('description')}</h4>
+                      {/* <h4 className="text-lg font-semibold text-zinc-800 dark:text-white">{t('description')}</h4> */}
                       <p className="text-zinc-500 dark:text-white mt-2">{reason.description}</p>
                     </div>
                     <hr className="my-4 border-zinc-300 dark:border-zinc-600" />
