@@ -1,4 +1,4 @@
-import { Info, Star, List } from 'lucide-react';
+import { Info, Star, List, ExternalLink } from 'lucide-react';
 import { useTranslations } from "next-intl";
 
 import { Metadata } from "next";
@@ -64,28 +64,31 @@ export default function SubriseFeaturedInfo({
             </div>
             <div className="columns-1 md:columns-2 lg:columns-3 gap-4 sm:gap-6">
               {reasons.map((reason, index) => (
-                <Link key={index} href={`/reddit-list/${reason.name}`}>
-                  <div className="relative break-inside-avoid border shadow-md hover:shadow-lg transition-shadow duration-300 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 sm:p-6 rounded-lg mb-4 sm:mb-6">
+                // <Link key={index} href={`/reddit-list/${reason.name}`}>
+                  <div key={index} className="relative break-inside-avoid border shadow-md hover:shadow-lg transition-shadow duration-300 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 sm:p-6 rounded-lg mb-4 sm:mb-6">
                     <div className="flex items-center mb-4">
                       <img src={reason.iconUrl} alt={reason.name} className="h-10 w-10 sm:h-12 sm:w-12 rounded-full mr-3 sm:mr-4 bg-white" />
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
                           <h3 className="text-lg sm:text-xl font-bold dark:text-white"> {reason.name} </h3>
-                          <span className="text-zinc-500 dark:text-white">#{reason.rank}</span>
+                          <Link href={`https://reddit.com${reason.href}`} className="flex ml-2 items-center text-xs text-zinc-500 hover:underline hover:text-orange-500" target="_blank"><ExternalLink className="w-4 h-4 ml-1" /></Link>
                         </div>
-                        <TagComp tags={reason.category.split(',')} />
+                        <div className="flex items-center justify-between mb-2">
+                          <TagComp tags={reason.category.split(',')} /> 
+                          <span className="text-zinc-500 dark:text-white"># {reason.rank}</span>
+                        </div>
                       </div>
                     </div>
                     <div className="mb-2">
-                      <p className="text-zinc-500 dark:text-white mt-2">{reason.description}</p>
+                      <p className="text-sm text-zinc-500 dark:text-white mt-2">{reason.description}</p>
                     </div>
                     <hr className="my-3 sm:my-4 border-zinc-300 dark:border-zinc-600" />
                     <div>
                       <h4 className="text-lg font-semibold text-zinc-800 dark:text-white">{t('featuredReason')}</h4>
-                      <p className="text-sm text-zinc-500 dark:text-white mt-2">{reason.featuredReason}</p>
+                      <p className="text-zinc-500 dark:text-white mt-2">{reason.featuredReason}</p>
                     </div>
                   </div>
-                </Link>
+                // </Link>
               ))}
             </div>
           </section>

@@ -58,3 +58,14 @@ export async function getAllSubredditFeatured() {
     .from(subriseFeatured)
     .execute();
 }
+
+export async function getSubredditFeaturedTitleAndDescription({language, slug}: {language: string, slug: string}) {
+  return await db
+    .select({
+      title: subriseFeatured.name,
+      description: subriseFeatured.description,
+    })
+    .from(subriseFeatured)
+    .where(and(eq(subriseFeatured.language, language), eq(subriseFeatured.featuredUrl, slug)))
+    .execute();
+}

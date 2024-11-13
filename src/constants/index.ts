@@ -64,14 +64,13 @@ export const NavItems = [
     icon: Zap
   },
   {
-    title: 'tips',
-    link: '/blog',
-    icon: List
-  },
-  
-  {
     title: 'featured',
     link: '/subrise-featured',
+    icon: List
+  },
+  {
+    title: 'tips',
+    link: '/blog',
     icon: List
   }
 ]
