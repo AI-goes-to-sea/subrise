@@ -75,7 +75,7 @@ export default function SubriseFeaturedInfo({
                         </div>
                         <div className="flex items-center justify-between mb-2">
                           <TagComp tags={reason.category.split(',')} /> 
-                          <span className="text-zinc-500 dark:text-white"># {reason.rank}</span>
+                          <span className="text-zinc-500 w-20 text-right dark:text-white"># {reason.rank}</span>
                         </div>
                       </div>
                     </div>
