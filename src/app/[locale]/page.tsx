@@ -7,6 +7,7 @@ import summaryImg from '@/../public/summary.svg'
 import conceptsImg from '@/../public/concept.svg'
 import catalogImg from '@/../public/catalog.svg'
 import subriseLogo from '@/../public/subrise_icon.svg';
+import featuredImg from '@/../public/featured.svg'
 import { ChevronsRight } from 'lucide-react';
 import { Link } from '@/i18n/routing';
 import { useTranslations } from 'next-intl';
@@ -42,10 +43,11 @@ export default function Home() {
           
         </section>
         
-        <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 md:mt-10 lg:mt-14">
+        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mt-8 md:mt-10 xl:mt-14">
           {[
             { title: t('home.concepts_title'), description: t('home.concepts_description'), href: '/concept', img: conceptsImg, alt:t('home.concepts_title') },
             { title: t('home.subreddits_title'), description: t('home.subreddits_description'), href: '/reddit-list', img: catalogImg, alt:t('home.subreddits_title') },
+            { title: t('home.featured_title'), description: t('home.featured_description'), href: '/subrise-featured', img: featuredImg, alt:t('home.featured_title') },
             { title: t('home.tips_title'), description: t('home.tips_description'), href: '/blog', img: summaryImg, alt:t('home.tips_title') },
             // { title: 'Reddit工具', description: '了解有用的第三方工具和浏览器插件', href: '/tools', img: toolsImg },
           ].map((item, index) => (

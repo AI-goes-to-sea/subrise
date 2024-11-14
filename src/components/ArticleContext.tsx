@@ -43,7 +43,7 @@ export default function ArticleContext({ meta, content }: ArticleContextProps) {
             const id = removeSquareBrackets(inputElement.value).toLowerCase().replace(/\s+/g, '-');
             return (
               <>
-                <h2 className="text-zinc-500 dark:text-white" id={id} {...props}>{removeSquareBrackets(props.children as string)}</h2>
+                <h2 className="text-black dark:text-white" id={id} {...props}>{removeSquareBrackets(props.children as string)}</h2>
                 <hr className="my-3 border-t border-zinc-200" />
               </>
             );
@@ -53,7 +53,7 @@ export default function ArticleContext({ meta, content }: ArticleContextProps) {
             const id = removeSquareBrackets(inputElement.value).toLowerCase().replace(/\s+/g, '-');
             return (
               <>
-                <h3 className="text-zinc-500 dark:text-white" id={id} {...props}>{removeSquareBrackets(props.children as string)}</h3>
+                <h3 className="text-black dark:text-white" id={id} {...props}>{removeSquareBrackets(props.children as string)}</h3>
                 <hr className="my-2 border-t border-zinc-200" />
               </>
             );
@@ -63,7 +63,7 @@ export default function ArticleContext({ meta, content }: ArticleContextProps) {
             const id = removeSquareBrackets(inputElement.value).toLowerCase().replace(/\s+/g, '-');
             return (
               <>
-                <h4 className="text-zinc-500 dark:text-white" id={id} {...props}>{removeSquareBrackets(props.children as string)}</h4>
+                <h4 className="text-black dark:text-white" id={id} {...props}>{removeSquareBrackets(props.children as string)}</h4>
                 <hr className="my-2 border-t border-zinc-200" />
               </>
             );
@@ -73,7 +73,7 @@ export default function ArticleContext({ meta, content }: ArticleContextProps) {
             const id = removeSquareBrackets(inputElement.value).toLowerCase().replace(/\s+/g, '-');
             return (
               <>
-                <h5 className="text-zinc-500 dark:text-white" id={id} {...props}>{removeSquareBrackets(props.children as string)}</h5>
+                <h5 className="text-black dark:text-white" id={id} {...props}>{removeSquareBrackets(props.children as string)}</h5>
                 <hr className="my-1 border-t border-zinc-200" />
               </>
             );
@@ -83,7 +83,7 @@ export default function ArticleContext({ meta, content }: ArticleContextProps) {
             const id = removeSquareBrackets(inputElement.value).toLowerCase().replace(/\s+/g, '-');
             return (
               <>
-                <h6 className="text-zinc-500 dark:text-white" id={id} {...props}>{removeSquareBrackets(props.children as string)}</h6>
+                <h6 className="text-black dark:text-white" id={id} {...props}>{removeSquareBrackets(props.children as string)}</h6>
                 <hr className="my-1 border-t border-zinc-200" />
               </>
             );

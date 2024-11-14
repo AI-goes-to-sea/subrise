@@ -1,5 +1,5 @@
 import { db } from "../db";
-import { subredditLang, subriseFeatured } from "../db/schema";
+import { subreddit, subredditLang, subriseFeatured } from "../db/schema";
 import { eq, and, inArray } from "drizzle-orm";
 export async function getSubredditFeaturedList (language: string) {
 
@@ -10,17 +10,17 @@ export async function getSubredditFeaturedList (language: string) {
     .execute();
 } 
 
-export async function getSubredditFeaturedDetail({language, id}: {language: string, id: number}) {
+export async function getSubredditFeaturedDetail({language, featuredUrl}: {language: string, featuredUrl: string}) {
   const featuredDetail = await db
     .select({
       name: subriseFeatured.name,
       description: subriseFeatured.description,
       promotion: subriseFeatured.promotion,
+      featuredUrl: subriseFeatured.featuredUrl,
       subredditId: subriseFeatured.subredditId,
-      // notice: subriseFeatured.notice,
     })
     .from(subriseFeatured)
-    .where(and(eq(subriseFeatured.language, language), eq(subriseFeatured.id, id)))
+    .where(and(eq(subriseFeatured.language, language), eq(subriseFeatured.featuredUrl, featuredUrl)))
     .execute();
 
   const {subredditId} = featuredDetail[0]
@@ -28,19 +28,44 @@ export async function getSubredditFeaturedDetail({language, id}: {language: stri
   // console.log(subredditId);
   let redditIds = subredditId.split(',');
   // console.log(redditIds);
-
   const reasons = await db
     .select({
+      id: subreddit.id,
+      name: subreddit.name,
+      rank: subreddit.rank,
+      iconUrl: subreddit.iconUrl,
+      subscribersCount: subreddit.subscribersCount,
+      href: subreddit.href,
       featuredReason: subredditLang.featuredReason,
-      category: subredditLang.category
+      category: subredditLang.category,
+      description: subredditLang.description,
     })
-    .from(subredditLang)
-    .where(and(eq(subredditLang.language, language), inArray(subredditLang.subredditId, redditIds.map(Number))))
+    .from(subreddit)
+    .innerJoin(subredditLang, eq(subreddit.id, subredditLang.subredditId))
+    .where(and(eq(subredditLang.language, language), inArray(subreddit.id, redditIds.map(Number))))
     .execute();
 
-  console.log(reasons);
+  // console.log(reasons);
   return {
     info: featuredDetail[0],
     reasons: reasons
   };
+}
+
+export async function getAllSubredditFeatured() {
+  return await db
+    .select()
+    .from(subriseFeatured)
+    .execute();
+}
+
+export async function getSubredditFeaturedTitleAndDescription({language, slug}: {language: string, slug: string}) {
+  return await db
+    .select({
+      title: subriseFeatured.name,
+      description: subriseFeatured.description,
+    })
+    .from(subriseFeatured)
+    .where(and(eq(subriseFeatured.language, language), eq(subriseFeatured.featuredUrl, slug)))
+    .execute();
 }
