@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { Metadata } from "next";
 import { Link } from '@/i18n/routing';
 import TagComp from './TagComp';
+import { defaultImgUrl } from '@/constants';
 
 const metadataMap: Record<string, Metadata> = {
   'en': {
@@ -67,7 +68,7 @@ export default function SubriseFeaturedInfo({
                 // <Link key={index} href={`/reddit-list/${reason.name}`}>
                   <div key={index} className="relative break-inside-avoid border shadow-md hover:shadow-lg transition-shadow duration-300 border-gray-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 p-4 sm:p-6 rounded-lg mb-4 sm:mb-6">
                     <div className="flex items-center mb-4">
-                      <img src={reason.iconUrl} alt={reason.name} className="h-10 w-10 sm:h-12 sm:w-12 rounded-full mr-3 sm:mr-4 bg-white" />
+                      <img src={reason.iconUrl || defaultImgUrl} alt={reason.name} className="h-10 w-10 sm:h-12 sm:w-12 rounded-full mr-3 sm:mr-4 bg-white" />
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
                           <h3 className="text-lg sm:text-xl font-bold dark:text-white"> {reason.name} </h3>

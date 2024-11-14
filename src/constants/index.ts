@@ -76,3 +76,5 @@ export const NavItems = [
 ]
 
 export const SITEMAP_INDEX_PAGE_SIZE = 2000;
+
+export const defaultImgUrl = 'https://styles.redditmedia.com/t5_2to41/styles/communityIcon_gznj8kdgrjra1.png?width=64&height=64&frame=1&auto=webp&crop=64:64,smart&s=bde2b559624eb616fc73c533a2d3658d927e892c';

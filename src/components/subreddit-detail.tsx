@@ -4,6 +4,7 @@ import { formatNumber } from "@/lib/utils";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { ExternalLink } from "lucide-react";
+import { defaultImgUrl } from "@/constants";
 
 interface SubredditDetailProps {
   item: Record<string, any>;
@@ -35,7 +36,7 @@ export default function SubredditDetail({ item }: SubredditDetailProps) {
     <>
       <div className="flex justify-between items-center mt-8">
         <h1 className="flex justify-center items-center mb-6 mt-8 text-center text-3xl font-bold dark:text-white">
-          <Image src={item.iconUrl} alt={item.name} width={64} height={64} unoptimized loading="lazy" className="rounded-full mr-3" />
+          <Image src={item.iconUrl || defaultImgUrl} alt={item.name} width={64} height={64} unoptimized loading="lazy" className="rounded-full mr-3" />
           {item.name}
         </h1>
         <Link href={`https://reddit.com/${item.name}`} className="flex items-center text-xs text-orange-500" target="_blank">
