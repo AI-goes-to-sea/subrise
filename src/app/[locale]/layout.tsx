@@ -59,6 +59,9 @@ export default async function RootLayout({children, modal, params}: RootLayoutIP
 
   return (
     <html lang={params.locale}>
+      <head>
+        <meta name="google-adsense-account" content="ca-pub-1939625526338391" />
+      </head>
       <body className={`${GeistSans.variable} flex justify-between flex-col min-h-screen bg-white dark:bg-black dark:text-whte`}>
         <NextIntlClientProvider locale={params.locale} messages={messages}>
           <ThemeProvider
